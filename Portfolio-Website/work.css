@@ -1,0 +1,315 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background: #000000;
+	color: white;
+	
+}
+
+
+
+
+.blackbox1 {
+	background: #000000;
+	position: relative;
+	box-sizing: border-box;
+	height: 100vh;
+	width: 100%;
+	z-index: 0;
+}
+
+.redbox {
+	background: #80081E;
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 40px;
+	z-index: 0;
+}
+
+.blackbox2 {
+	background: #000000;
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 40px;
+	z-index: 0;
+}
+	
+.arrows {
+	cursor: pointer;
+	z-index: 1;
+}
+
+.left {
+	position: absolute;
+	height: 40px;
+	margin: 20px;
+	right: 90%;
+	top: 50%;
+	
+}
+.right {
+	position: absolute;
+	height: 40px;
+	margin: 20px;
+	left: 90%;
+	top: 50%;
+}
+.down {
+	position: absolute;
+	height: 10px;
+	margin: 10px;
+	left: 50%;
+	top: 90%;
+	cursor: s-resize;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family:"HP Simplified", "Georgia"
+}
+
+
+.top-bar {
+	background: #000000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.logo { /* This here is the logo */
+	height: 50px;
+	position: fixed;
+	top: 30px;
+	left: 40px;
+	z-index: 3;
+	cursor: pointer;
+	
+	
+}
+
+	
+
+
+.menu {
+	display: flex;
+	list-style-type: none;
+	
+}
+
+li {
+	padding: 20px;
+	overflow: hidden;
+	
+}
+
+.box {
+	height: 100%;
+	width: 30px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+
+.icon, .icon::before, .icon::after {
+	display: block;
+	background: white;
+	height: 4px;
+	width: 30px;
+	border-radius: 2px;
+	position: absolute;
+	transition: transform 400ms;
+	
+	
+}
+
+.icon::before {
+	content: "";
+	margin-top: -8px;
+}
+.icon::after {
+	content: "";
+	margin-top: 8px;
+	
+	
+}
+
+#activate:checked + .box .icon::before {
+	margin-top: 0;
+	transform: rotate(405deg);
+	
+}
+
+#activate:checked + .box .icon::after {
+	margin-top: 0;
+	transform: rotate(-405deg);
+	
+}
+
+#activate:checked + .box .icon  {
+	background: rgba(150,0,4,0);
+	
+}
+
+#activate {
+	display: none;
+}
+
+.box { /* This here is the menu button */
+	display: flex;
+	position: fixed;
+	right: 40px;
+	height: 100px;
+	z-index: 3;
+	top: 0px;
+}
+.menu { /* This here is the drop down menu - desktop */
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin-top: 0px;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+		overflow: hidden;
+	}
+	.menu li {
+		background: #80081E;
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		z-index: 2;
+		
+		
+	}
+	
+	#activate ~ .menu li {
+		height: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		transition: height 400ms;
+		z-index: 2;
+		
+		
+		
+		
+	}
+	
+	#activate:checked ~ .menu li {
+		transition: height 400ms;
+		height: 100vh;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		z-index: 2;
+	}
+
+	
+.menu li home{
+	top: 100px;
+	z-index: 2;
+	
+	
+}
+
+.home {
+	position: absolute;
+	left: 10vw;
+	top: 20%;
+	z-index: 3;
+	margin-left: -37px;
+	font-size: 26px;
+	cursor: pointer;
+	
+}
+.work {
+	position: absolute;
+	left: 10vw;
+	top: 40%;
+	z-index: 3;
+	margin-left: -37px;
+	font-size: 26px;
+	cursor: pointer;
+	
+}
+.about {
+	position: absolute;
+	left: 10vw;
+	top: 60%;
+	z-index: 3;
+	margin-left: -37px;
+	font-size: 26px;
+	cursor: pointer;
+	
+}
+.contact {
+	position: absolute;
+	left: 10vw;
+	top: 80%;
+	z-index: 3;
+	margin-left: -37px;
+	font-size: 26px;
+	cursor: pointer;
+	
+	
+	
+}
+
+/* Smartphone/tablet version */
+@media screen and (max-width: 700px) {
+	.box {
+		display: flex;
+	}
+	
+	.menu { /* This here is the drop down menu - smartphone */
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-top: 115px;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	.menu li {
+		background: #80081E;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		
+		
+	}
+	
+	#activate ~ .menu li {
+		height: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		transition: height 400ms;
+		
+	}
+	
+	#activate:checked ~ .menu li {
+		transition: height 400ms;
+		height: 45px;
+		padding: 15px;
+	}
+	
+	
+	
+}
+
+
+
