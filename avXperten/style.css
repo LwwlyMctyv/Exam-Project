@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-
-
 * {
 	margin: 0;
 	padding: 0;
@@ -12,7 +10,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: red;
+	background: #292D30;
 }
 .top-bar {
 	display: flex;
@@ -21,12 +19,10 @@ body {
 	top: 0px;
 	width: 100%;
 	height: 76px;
-	align-items: baseline;
+	align-items: center;
 	justify-content: space-between;
 	z-index: 1;
 }
-
-
 
 .blackbox1 {
 	background: #292D30;
@@ -35,6 +31,27 @@ body {
 	height: 100vh;
 	width: 100%;
 	z-index: 0;
+}
+
+.tilbud {
+	background: #0A79A7;
+	position: relative;
+	box-sizing: border-box;
+	margin: 0 10px 10px 10px;
+	left: 30%;
+	height: 500px;
+	width: 500px;
+	z-index: 0;
+	
+}
+
+.tilbud-billede {
+	margin: 10px 10px 10px 10px;
+	width: inherit;
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+	top: 100px;
 }
 
 .bluebox {
@@ -49,42 +66,13 @@ body {
 .box{
 	display: flex;
 	position: relative;
-	top: 14px;
-	left: 2vw;
+	margin: 0px 1vw 0 2vw;
 	width: 56px;
-}
-
-.logo {
-	height: 48px;
-	position: relative;
-	z-index: 1;
-	cursor: pointer;
-}
-
-.searchbox {
-	display: flex;
-	background: white;
-	position: relative;
-	box-sizing: border-box;
-	padding: 1vw;
-	top: 7px;
-	height: 48px;
-	width: 100;
-	font-size: 14px;
-	font-weight: 500;
-	line-height: 1.4;
-	border-radius: 5px;
-	border: 2px solid transparent;
-	z-index: 2;
-	outline: none;
-	resize: none;
-	text-align: start;
-	
 }
 
 .dropdown {
 	position: relative;
-	width: 200px;
+	width: 70px;
 	height: 48px;
 	background: #070808;
 	color: #fff;
@@ -93,8 +81,15 @@ body {
 	justify-content: center;
 	align-items: center;
 	border-radius: 5px;
+	border: 3.5px outset transparent;
 	cursor: pointer;
 	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.dropdown:hover {
+	background: #0F1111;
+	border: 3.5px inset #0A79A7;
+	transition: .5s;
 }
 
 .dropdown .left-icon,
@@ -110,7 +105,7 @@ body {
 }
 
 .dropdown .left-icon{
-	left: 7px;
+	left: 3px;
 	transform: rotate(45deg);
 }
 
@@ -119,6 +114,7 @@ body {
 }
 
 .dropdown .right-icon{
+	left: -3px;
 	transform: rotate(-45deg);
 }
 
@@ -149,7 +145,6 @@ body {
 	margin-top: 63px;
 	visibility: hidden;
 	transition: .5s;
-	
 }
 
 
@@ -206,4 +201,122 @@ body {
 
 .dropdown .items a:hover span {
 	transform: rotate(0deg);
+}
+
+.logo {
+	top: 7px;
+	height: 35px;
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+	margin: 0px 1vw 0 1vw;
+}
+
+.searchbar {
+	width: 100%;
+	display: flex;
+	position: relative;
+	margin: 0px 1vw 0 1vw;
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.searchbar label{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: #0A79A7;
+	padding: 0 5px;
+	pointer-events: none;
+	transition: .5s;
+}
+
+.searchbar input {
+	width: 100%;
+	min-width: 150px;
+	height: 46px;
+	font-size: 16px;
+	color: #0A79A7;
+	padding: 0 0px;
+	background: #fff;
+	border: 3.5px solid #070808;
+	outline: none;
+	border-radius: 5px;
+}
+
+.searchbar input:focus~label,
+.searchbar input:valid~label {
+	top: 0;
+	font-size: 12px;
+	background: #070808;
+	border-radius: 3px;
+}
+
+.support-topbar, .favorite-topbar, .cart-topbar, .profile-topbar {
+	position: relative;
+	margin: 0px 1vw 0 1vw;
+	width: 70px;
+	height: 48px;
+	background: #070808;
+	border: 3.5px outset transparent;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.cart-topbar {
+	background: #0A79A7;
+	font-size: 14px;
+	padding: 0 90px;
+	
+}
+
+.profile-topbar {
+	margin-right: 2vw;
+}
+
+.support-topbar:hover, .favorite-topbar:hover, .cart-topbar:hover, .profile-topbar:hover {
+	background: #0F1111;
+	border: 3.5px inset #0A79A7;
+	transition: .5s;
+}
+
+.cart-topbar:hover {
+	color: #0A79A7;
+	transition: .5s;
+}
+
+.support-icon, .favorite-icon, .cart-icon, .cart-icon2, .profile-icon {
+	height: 30px;
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+	padding: 0 10px 0 10px;
+}
+
+.cart-icon {
+	padding: 0 0 0 10px;
+}
+
+.cart-icon2 {
+	visibility: hidden;
+	overflow: hidden;
+	padding: 0 0 0 0;
+}
+
+.cart-topbar:hover .cart-icon {
+	visibility: hidden;
+	overflow: hidden;
+	transition: .5s;
+}
+
+.cart-topbar:hover .cart-icon2 {
+	visibility: visible;
+	overflow: visible;
+	transition: .5s;
 }
